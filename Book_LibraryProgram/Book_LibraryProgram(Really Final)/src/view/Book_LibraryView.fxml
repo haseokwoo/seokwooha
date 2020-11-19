@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="866.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+  <tabs>
+    <Tab text="Home">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="130.0" layoutY="14.0" prefHeight="400.0" prefWidth="579.0" text="Book Searching Program" textAlignment="CENTER">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="54.0" layoutY="385.0" text="This program searches, creates, updates, and deletes books from the library database.">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Search/Create/Update/Delete">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="combobox1" layoutX="21.0" layoutY="56.0" onAction="#setSearchEnabled" prefHeight="23.0" prefWidth="223.0" promptText="(Select Search Method)" />
+                  <ComboBox fx:id="combobox2" layoutX="21.0" layoutY="88.0" onAction="#setUpdateDeleteCreateEnabled" prefHeight="23.0" prefWidth="223.0" promptText="(Select Update/Create/Delete)" />
+                  <TextField fx:id="searchByAny" layoutX="391.0" layoutY="57.0" prefHeight="20.0" prefWidth="140.0" visible="false" />
+                  <TextField fx:id="searchByAuthor" layoutX="391.0" layoutY="57.0" prefHeight="20.0" prefWidth="140.0" visible="false" />
+                  <TextField fx:id="searchByTitle" layoutX="391.0" layoutY="57.0" prefHeight="20.0" prefWidth="140.0" visible="false" />
+                  <TextField fx:id="searchByGenre" layoutX="391.0" layoutY="57.0" prefHeight="20.0" prefWidth="140.0" visible="false" />
+                  <TextField fx:id="searchByLocation" layoutX="391.0" layoutY="57.0" prefHeight="20.0" prefWidth="140.0" visible="false" />
+                  <TextField fx:id="searchByRowID" layoutX="391.0" layoutY="57.0" prefHeight="20.0" prefWidth="140.0" visible="false" />
+                  <Button fx:id="buttonSearch" layoutX="684.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="23.0" prefWidth="61.0" text="Search" visible="false" />
+                  <TextField fx:id="updateAuthor" layoutX="70.0" layoutY="15.0" visible="false" />
+                  <TextField fx:id="updateTitle" layoutX="276.0" layoutY="14.0" visible="false" />
+                  <TextField fx:id="updateGenre" layoutX="474.0" layoutY="14.0" visible="false" />
+                  <TextField fx:id="updateLocation" layoutX="704.0" layoutY="14.0" visible="false" />
+                  <Label fx:id="labelSearchByAny" layoutX="290.0" layoutY="60.0" text="By Any" visible="false" />
+                  <Label fx:id="labelSearchByAuthor" layoutX="290.0" layoutY="60.0" text="By Author" visible="false" />
+                  <Label fx:id="labelSearchByTitle" layoutX="290.0" layoutY="60.0" text="By Title" visible="false" />
+                  <Label fx:id="labelSearchByGenre" layoutX="290.0" layoutY="60.0" text="By Genre" visible="false" />
+                  <Label fx:id="labelSearchByLocation" layoutX="290.0" layoutY="60.0" text="By Location" visible="false" />
+                  <Label fx:id="labelSearchByRowID" layoutX="290.0" layoutY="60.0" text="By RowID" visible="false" />
+                  <Button fx:id="buttonDelete" layoutX="684.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="23.0" prefWidth="61.0" text="Delete" visible="false" />
+                  <Label fx:id="labelUpdateGenre" layoutX="430.0" layoutY="18.0" text="Genre" visible="false" />
+                  <Label fx:id="labelUpdateLocation" layoutX="646.0" layoutY="18.0" text="Location" visible="false" />
+                  <Label fx:id="labelUpdateTitle" layoutX="234.0" layoutY="18.0" text="Title" visible="false" />
+                  <Button fx:id="buttonUpdate" layoutX="684.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="23.0" prefWidth="61.0" text="Update" visible="false" />
+                  <Label fx:id="labelUpdateAuthor" layoutX="25.0" layoutY="18.0" text="Author" visible="false" />
+                  <Label fx:id="labelUpdate2" alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="80.0" prefHeight="15.0" prefWidth="618.0" text="*2. From the table below, select the row you want to update.*" textAlignment="CENTER" visible="false" />
+                  <Label fx:id="labelUpdate1" layoutX="275.0" layoutY="65.0" text="*1. Search for the book you want to update.*" visible="false" />
+                  <Label fx:id="labelUpdate3" layoutX="275.0" layoutY="95.0" prefHeight="15.0" prefWidth="381.0" text="*3. Make any changes to the book, and click the update button.*" visible="false" />
+                  <Label fx:id="labelDelete2" alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="80.0" prefHeight="15.0" prefWidth="362.0" text="*2. From the table below, select the row you want to delete.*" textAlignment="CENTER" visible="false" />
+                  <Label fx:id="labelDelete1" layoutX="275.0" layoutY="64.0" text="*1. Search for the book you want to delete.*" visible="false" />
+                  <Label fx:id="labelDelete3" layoutX="275.0" layoutY="96.0" prefHeight="4.0" prefWidth="169.0" text="*3. Click the delete button.*" visible="false" />
+                  <Label fx:id="labelDelete4" layoutX="230.0" layoutY="157.0" prefHeight="15.0" prefWidth="448.0" text="**After delete, you can check whether the book had been deleted or not.**" visible="false" />
+                  <Button fx:id="buttonCreate" layoutX="684.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleCreate" prefHeight="23.0" prefWidth="61.0" text="Create" visible="false" />
+                  <Label fx:id="labelCreate" layoutX="275.0" layoutY="65.0" text="*Please fill all the blanks to create a book.*" visible="false" />
+                  <Label fx:id="labelCreate1" layoutX="295.0" layoutY="156.0" text="**The created item appears on the table below.**" visible="false" />
+                  <Label fx:id="labelUpdate" layoutX="295.0" layoutY="156.0" text="**The updated item appears on the table below.**" visible="false" />
+                  <Button fx:id="buttonSearchClear" cancelButton="true" layoutX="684.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleSearchClear" prefHeight="23.0" prefWidth="61.0" text="Reset" />
+                  <TableView fx:id="searchTable" layoutX="17.0" layoutY="178.0" onKeyReleased="#buttonPressed" onMouseClicked="#getInfo" prefHeight="469.0" prefWidth="833.0">
+                     <columns>
+                        <TableColumn fx:id="searchc1RowID" minWidth="0.0" prefWidth="0.0" text="RowID" />
+                        <TableColumn fx:id="searchc2Author" minWidth="0.0" prefWidth="150.0" text="Author" />
+                        <TableColumn fx:id="searchc3Title" prefWidth="394.0" text="Title" />
+                        <TableColumn fx:id="searchc4Genre" prefWidth="158.0" text="Genre" />
+                        <TableColumn fx:id="searchc5Location" prefWidth="130.0" text="Location" />
+                     </columns>
+                  </TableView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
